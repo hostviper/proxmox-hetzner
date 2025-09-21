@@ -127,7 +127,7 @@ download_proxmox_iso() {
         echo -e "${CLR_RED}Failed to retrieve Proxmox ISO URL! Exiting.${CLR_RESET}"
         exit 1
     fi
-    wget -O pve.iso "$PROXMOX_ISO_URL"
+    wget -4 -O pve.iso "$PROXMOX_ISO_URL"
     echo -e "${CLR_GREEN}Proxmox ISO downloaded.${CLR_RESET}"
 }
 
@@ -236,11 +236,11 @@ make_template_files() {
     echo -e "${CLR_YELLOW}Downloading template files...${CLR_RESET}"
     mkdir -p ./template_files
 
-    wget -O ./template_files/99-proxmox.conf https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/99-proxmox.conf
-    wget -O ./template_files/hosts https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/hosts
-    wget -O ./template_files/interfaces https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/interfaces
-    wget -O ./template_files/debian.sources https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/debian.sources
-    wget -O ./template_files/proxmox.sources https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/proxmox.sources
+    wget -4 -O ./template_files/99-proxmox.conf https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/99-proxmox.conf
+    wget -4 -O ./template_files/hosts https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/hosts
+    wget -4 -O ./template_files/interfaces https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/interfaces
+    wget -4 -O ./template_files/debian.sources https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/debian.sources
+    wget -4 -O ./template_files/proxmox.sources https://github.com/ariadata/proxmox-hetzner/raw/refs/heads/main/files/template_files/proxmox.sources
 
     # Process hosts file
     echo -e "${CLR_YELLOW}Processing hosts file...${CLR_RESET}"
