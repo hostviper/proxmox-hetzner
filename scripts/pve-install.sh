@@ -148,8 +148,7 @@ make_answer_toml() {
 
 [disk-setup]
     filesystem = "ext4"
-    zfs.raid = "raid0"
-    disk_list = ["/dev/nvme0n1", "/dev/nvme1n1"]
+    disk_list = ["/dev/nvme0n1"]
 
 EOF
     echo -e "${CLR_GREEN}answer.toml created.${CLR_RESET}"
